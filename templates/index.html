@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Book Recommendation System</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:50%;
+margin:auto;
+}
+
+button{
+padding:10px;
+background:blue;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📚 Book Recommendation System</h1>
+
+<form method="POST">
+
+<select name="book">
+
+{% for book in books %}
+<option value="{{ book }}">{{ book }}</option>
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Recommend
+</button>
+
+</form>
+
+<h2>Recommended Books</h2>
+
+<ul>
+
+{% for item in recommendations %}
+<li>{{ item }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+</body>
+
+</html>
